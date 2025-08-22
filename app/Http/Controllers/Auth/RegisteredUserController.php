@@ -40,11 +40,11 @@ class RegisteredUserController extends Controller
         ]);
 
         try {
-            $adminRole = Role::where('role_name', 'admin')->first();
+            $role = Role::where('role_name', 'user')->first();
 
-            if (!$adminRole) {
-                Log::error('Admin role not found in roles table.');
-                return redirect()->back()->withErrors(['error' => 'Admin role not configured. Please contact support.']);
+            if (!$role) {
+                Log::error('role not found in roles table.');
+                return redirect()->back()->withErrors(['error' => 'role not configured. Please contact support.']);
             }
 
             $user = User::create([
@@ -52,7 +52,7 @@ class RegisteredUserController extends Controller
                 'name' => $request->name,
                 'email' => $request->email,
                 'password' => Hash::make($request->password),
-                'role_id' => $adminRole->role_id,
+                'role_id' => $role->role_id,
                 'email_verified_at' => null, // Belum diverifikasi
             ]);
 
