@@ -12,7 +12,6 @@ class UserVerificationController extends Controller
 {
     public function index(): Response
     {
-        Gate::authorize('manage-users');
 
         $users = User::with('role')->get();
 
@@ -23,7 +22,6 @@ class UserVerificationController extends Controller
 
     public function verify(string $user_id): RedirectResponse
     {
-        Gate::authorize('manage-users');
 
         $user = User::findOrFail($user_id);
         $user->update(['email_verified_at' => now()]);

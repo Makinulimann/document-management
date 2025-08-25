@@ -13,11 +13,16 @@ class File extends Model
     protected $primaryKey = 'file_id';
     public $incrementing = false;
     protected $keyType = 'string';
-    protected $fillable = ['folder_id', 'file_name', 'file_path', 'file_size', 'file_type', 'uploaded_by'];
+    protected $fillable = ['menu_id','folder_id', 'file_name', 'file_path', 'file_size', 'file_type', 'uploaded_by'];
 
     public function folder()
     {
         return $this->belongsTo(Folder::class, 'folder_id', 'folder_id');
+    }
+
+    public function menu()
+    {
+        return $this->belongsTo(Menu::class, 'menu_id', 'menu_id');
     }
 
     public function uploader()

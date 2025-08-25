@@ -56,22 +56,11 @@ const DppPage = () => {
       <Head title="Data DPP" />
 
       <h2 className="text-lg font-semibold mb-2">
-        Kelola dan pantau data engineering berbasis pusat data
+        Kelola data DPP
       </h2>
 
       {/* 🔹 Filter Section */}
       <div className="flex flex-wrap items-center gap-2 mb-4">
-        <Select>
-          <SelectTrigger className="w-[150px]">
-            <SelectValue placeholder="All PLTA" />
-          </SelectTrigger>
-          <SelectContent>
-            <SelectItem value="all">All PLTA</SelectItem>
-            <SelectItem value="plta1">PLTA 1</SelectItem>
-            <SelectItem value="plta2">PLTA 2</SelectItem>
-          </SelectContent>
-        </Select>
-
         <Select>
           <SelectTrigger className="w-[180px]">
             <SelectValue placeholder="Semua Kategori" />

@@ -9,9 +9,7 @@ const breadcrumbs: BreadcrumbItem[] = [
     },
 ];
 
-// 1. Fungsi tidak lagi menerima props, karena URL didefinisikan di dalam
 export default function Dashboard() {
-    // 2. Definisikan URL Looker Studio Anda di sini sebagai konstanta
     const lookerStudioUrl = "https://lookerstudio.google.com/embed/reporting/5aa64aeb-9706-486e-9d66-0210f407b993/page/p_ovcwg4uytd";
 
     return (
@@ -24,7 +22,6 @@ export default function Dashboard() {
                 {lookerStudioUrl ? (
                     <iframe
                         className="w-full flex-1 rounded-lg"
-                        // 3. Gunakan konstanta yang sudah Anda definisikan di atas
                         src={lookerStudioUrl}
                         title="Looker Studio Dashboard"
                         style={{ border: 0 }}
